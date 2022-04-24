@@ -1,4 +1,8 @@
 /* eslint-disable no-alert */
+function updateTitle(coffeeQty) {
+  if (!document.title) return;
+  document.title = coffeeQty + ' Coffee Clicker';
+}
 
 function updateCoffeeView(coffeeQty) {
   const coffeeCounter = document.getElementById('coffee_counter');
@@ -127,6 +131,7 @@ function tick(data) {
   data.coffee += data.totalCPS;
   updateCoffeeView(data.coffee);
   renderProducers(data);
+  updateTitle(data.coffee);
 }
 
 function changeStartMessage() {
